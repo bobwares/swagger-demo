@@ -22,8 +22,8 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer getCustomer(int id) {
-        return null;
+    public Customer getCustomer(long id) {
+        return customerRepository.findOne(id);
     }
 
     @Override

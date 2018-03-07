@@ -2,9 +2,5 @@ package com.bobwares.demo.swagger.repository;
 
 import com.bobwares.demo.swagger.entity.Customer;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-//@RepositoryRestResource
-public interface CustomerRepository extends CrudRepository<Customer, Long> {
-
-}
+public interface CustomerRepository extends CrudRepository<Customer, Long> {}
