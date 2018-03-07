@@ -1,16 +1,20 @@
+server:
+    context-path: /swagger-demo
+    port: 8080
 
 logging:
     level:
-      ROOT: INFO
+      ROOT: ERROR
       com:
-          flywaydb: DEBUG
+          flywaydb: ERROR
+          bobwares.demo.swagger.config: INFO
 
 # H2
 spring:
   h2.console.enabled: true
   h2.console.path: /h2
   datasource:
-    url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:testdb
     username: sa
     password:
     driver-class-name: org.h2.Driver
@@ -18,6 +22,18 @@ spring:
       database: H2
       show-sql: true
       hibernate.ddl-auto: none
+
 endpoints:
     enabled: false
-
+#
+#swagger:
+#    api:
+#        contactEmail: bobwares@gmail.com
+#        contactName: Bob Adelmann
+#        contactUrl: https://github.com/bobwares/swagger-demo
+#        description: Demonstrate adding SpringFox libraries to existing project to document it's REST APIs.
+#        licence: Apache 2.0
+#        licenceUrl: https://github.com/bobwares/swagger-demo/blob/master/LICENSE
+#        termsOfService: https://github.com/bobwares/swagger-demo/blob/master/LICENSE
+#        title: Swagger Demonstration Project
+#        version: 1.0
