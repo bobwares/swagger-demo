@@ -1,0 +1,25 @@
+
+logging:
+    level:
+      ROOT: INFO
+      com:
+          flywaydb: DEBUG
+
+
+# H2
+spring:
+  h2.console.enabled: true
+  h2.console.path: /h2
+  datasource:
+    url: jdbc:h2:mem:testDb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+      database: H2
+      show-sql: false
+  data.rest.basePath: /api
+
+endpoints:
+    enabled: false
+
