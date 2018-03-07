@@ -5,21 +5,19 @@ logging:
       com:
           flywaydb: DEBUG
 
-
 # H2
 spring:
   h2.console.enabled: true
   h2.console.path: /h2
   datasource:
-    url: jdbc:h2:mem:testDb
+    url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE
     username: sa
     password:
     driver-class-name: org.h2.Driver
   jpa:
       database: H2
-      show-sql: false
-  data.rest.basePath: /api
-
+      show-sql: true
+      hibernate.ddl-auto: none
 endpoints:
     enabled: false
 

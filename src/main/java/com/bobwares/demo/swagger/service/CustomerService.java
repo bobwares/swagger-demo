@@ -6,7 +6,7 @@ import com.bobwares.demo.swagger.entity.Customer;
 public interface CustomerService {
     Iterable<Customer> getCustomers();
 
-    Customer getCustomer(int id);
+    Customer getCustomer(long id);
 
     Customer postCustomer(CustomerInDto customerInDto);
 
