@@ -4,10 +4,14 @@ import com.bobwares.demo.swagger.dto.CustomerInDto;
 import com.bobwares.demo.swagger.entity.Customer;
 
 public interface CustomerService {
-    Iterable<Customer> getCustomers();
 
-    Customer getCustomer(long id);
+    Iterable<Customer> getAll();
 
-    Customer postCustomer(CustomerInDto customerInDto);
+    Customer get(long id);
 
+    Customer post(CustomerInDto customerInDto);
+
+    Customer put(Customer customer);
+
+    void delete(long id);
 }

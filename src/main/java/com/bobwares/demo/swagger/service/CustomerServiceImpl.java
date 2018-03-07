@@ -17,21 +17,31 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Iterable<Customer> getCustomers() {
+    public Iterable<Customer> getAll() {
         return customerRepository.findAll();
     }
 
     @Override
-    public Customer getCustomer(long id) {
+    public Customer get(long id) {
         return customerRepository.findOne(id);
     }
 
     @Override
-    public Customer postCustomer(CustomerInDto customerInDto) {
+    public Customer post(CustomerInDto customerInDto) {
         Customer customer = Customer.builder()
                 .firstName(customerInDto.getFirstName())
                 .lastName(customerInDto.getLastName())
                 .build();
         return customerRepository.save(customer);
+    }
+
+    @Override
+    public Customer put(Customer customer) {
+        return customerRepository.save(customer);
+    }
+
+    @Override
+    public void delete(long id) {
+        customerRepository.delete(id);
     }
 }

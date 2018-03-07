@@ -1,16 +1,20 @@
+server:
+    context-path: /swagger-demo
+    port: 8080
 
 logging:
     level:
-      ROOT: INFO
+      ROOT: ERROR
       com:
-          flywaydb: DEBUG
+        bobwares.demo.swagger.SwaggerDemoApplication: INFO
+        flywaydb: ERROR
 
 # H2
 spring:
   h2.console.enabled: true
   h2.console.path: /h2
   datasource:
-    url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:testdb
     username: sa
     password:
     driver-class-name: org.h2.Driver
@@ -18,6 +22,5 @@ spring:
       database: H2
       show-sql: true
       hibernate.ddl-auto: none
-endpoints:
-    enabled: false
+
 
