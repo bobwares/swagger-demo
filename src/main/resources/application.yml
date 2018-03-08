@@ -7,8 +7,12 @@ logging:
       ROOT: ERROR
       com:
           flywaydb: ERROR
-          bobwares.demo.swagger.config: INFO
-          bobwares.demo.swagger.SwaggerDemoApplication: INFO
+          bobwares:
+            demo:
+              swagger:
+                service: INFO
+                config: INFO
+                SwaggerDemoApplication: INFO
        
 
 # H2

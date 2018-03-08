@@ -1,5 +1,6 @@
 package com.bobwares.demo.swagger.service;
 
+import com.bobwares.demo.swagger.config.SwaggerRestConfiguration;
 import com.bobwares.demo.swagger.dto.CustomerInDto;
 import com.bobwares.demo.swagger.entity.Customer;
 import com.bobwares.demo.swagger.repository.CustomerRepository;
@@ -11,6 +12,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(CustomerServiceImpl.class);
+
     private CustomerRepository customerRepository;
 
     @Autowired
@@ -20,11 +23,13 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Iterable<Customer> getAll() {
+        LOGGER.debug("getAll executed");
         return customerRepository.findAll();
     }
 
     @Override
     public Customer get(long id) {
+        LOGGER.debug("Paramter id: " + id);
         return customerRepository.findOne(id);
     }
 
