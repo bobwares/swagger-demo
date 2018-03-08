@@ -13,6 +13,8 @@ logging:
 
 # H2
 spring:
+  application:
+    name: SWAGGER-DEMO
   h2.console.enabled: true
   h2.console.path: /h2
   datasource:
@@ -24,9 +26,14 @@ spring:
       database: H2
       show-sql: false
       hibernate.ddl-auto: none
+  boot:
+      admin:
+        url: http://localhost:8888
 
 management:
     security:
         enabled: false
+
 endpoints:
     enabled: true
+
