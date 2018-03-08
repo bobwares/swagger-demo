@@ -47,7 +47,6 @@ public class SwaggerRestConfiguration {
     @Value("${server.context-path}")
     private String contextPath;
 
-
     public SwaggerRestConfiguration() {
 		LOGGER.info("Starting ... SwaggerRestConfiguration");
 			}
@@ -61,7 +60,6 @@ public class SwaggerRestConfiguration {
 				.apis(RequestHandlerSelectors.any())
 				.paths(PathSelectors.any())
 				.build();
-
 	}
 
 	private ApiInfo apiInfo() {

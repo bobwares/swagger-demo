@@ -20,20 +20,8 @@ spring:
     driver-class-name: org.h2.Driver
   jpa:
       database: H2
-      show-sql: true
+      show-sql: false
       hibernate.ddl-auto: none
 
 endpoints:
     enabled: false
-#
-#swagger:
-#    api:
-#        contactEmail: bobwares@gmail.com
-#        contactName: Bob Adelmann
-#        contactUrl: https://github.com/bobwares/swagger-demo
-#        description: Demonstrate adding SpringFox libraries to existing project to document it's REST APIs.
-#        licence: Apache 2.0
-#        licenceUrl: https://github.com/bobwares/swagger-demo/blob/master/LICENSE
-#        termsOfService: https://github.com/bobwares/swagger-demo/blob/master/LICENSE
-#        title: Swagger Demonstration Project
-#        version: 1.0
