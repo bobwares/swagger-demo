@@ -8,6 +8,8 @@ logging:
       com:
           flywaydb: ERROR
           bobwares.demo.swagger.config: INFO
+          bobwares.demo.swagger.SwaggerDemoApplication: INFO
+       
 
 # H2
 spring:
@@ -23,5 +25,3 @@ spring:
       show-sql: false
       hibernate.ddl-auto: none
 
-endpoints:
-    enabled: false

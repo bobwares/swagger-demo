@@ -43,6 +43,7 @@ public class CustomerEndpoint {
         if (updatedCustomer == null) {
             return new ResponseEntity<Customer>(HttpStatus.NOT_FOUND);
         }
+
         ResponseEntity<Customer> customerResponseEntity = new ResponseEntity<Customer>(updatedCustomer, HttpStatus.OK);
         return customerResponseEntity;
     }

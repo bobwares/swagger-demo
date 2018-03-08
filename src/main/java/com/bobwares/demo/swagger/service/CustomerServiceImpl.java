@@ -47,6 +47,7 @@ public class CustomerServiceImpl implements CustomerService {
             customer.setLastName(customerInDto.getLastName());
             return customerRepository.save(customer);
         }
+
     }
 
     @Override
