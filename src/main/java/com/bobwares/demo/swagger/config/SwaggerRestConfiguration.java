@@ -58,7 +58,7 @@ public class SwaggerRestConfiguration {
 				.apiInfo(apiInfo())
 				.select()
 				.apis(RequestHandlerSelectors.any())
-				.paths(PathSelectors.any())
+				.paths(PathSelectors.ant("/customer/**"))
 				.build();
 	}
 
