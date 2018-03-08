@@ -11,7 +11,7 @@ public interface CustomerService {
 
     Customer post(CustomerInDto customerInDto);
 
-    Customer put(Customer customer);
+    Customer put(CustomerInDto customerInDto, long id);
 
     void delete(long id);
 }

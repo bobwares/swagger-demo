@@ -24,8 +24,12 @@ public class CustomerEndpoint {
     }
 
     @GetMapping("customer/{id}")
-    public Customer get(@PathVariable("id") long id) {
-        return customerService.get(id);
+    public ResponseEntity<Customer> get(@PathVariable("id") long id) {
+        Customer customer = customerService.get(id);
+        if (customer == null) {
+            return new ResponseEntity<Customer>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<Customer>(customer, HttpStatus.OK);
     }
 
     @PostMapping("customer")
@@ -33,15 +37,20 @@ public class CustomerEndpoint {
         return customerService.post(customerInDto);
     }
 
-    @PutMapping("customer")
-    public ResponseEntity<Customer> put(Customer customer) {
-        Customer updatedCustomer = customerService.put(customer);
+    @PutMapping("customer/{id}")
+    public ResponseEntity<Customer> put(@PathVariable("id") long id, @RequestBody CustomerInDto customerInDto) {
+        Customer updatedCustomer = customerService.put(customerInDto, id);
+        if (updatedCustomer == null) {
+            return new ResponseEntity<Customer>(HttpStatus.NOT_FOUND);
+        }
+
         ResponseEntity<Customer> customerResponseEntity = new ResponseEntity<Customer>(updatedCustomer, HttpStatus.OK);
         return customerResponseEntity;
     }
 
     @DeleteMapping("customer/{id}")
     public ResponseEntity<HttpStatus> delete(@PathVariable("id") long id) {
+        customerService.delete(id);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 }

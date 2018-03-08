@@ -6,8 +6,10 @@ logging:
     level:
       ROOT: ERROR
       com:
-        bobwares.demo.swagger.SwaggerDemoApplication: INFO
-        flywaydb: ERROR
+          flywaydb: ERROR
+          bobwares.demo.swagger.config: INFO
+          bobwares.demo.swagger.SwaggerDemoApplication: INFO
+       
 
 # H2
 spring:
@@ -20,7 +22,6 @@ spring:
     driver-class-name: org.h2.Driver
   jpa:
       database: H2
-      show-sql: true
+      show-sql: false
       hibernate.ddl-auto: none
-
 
